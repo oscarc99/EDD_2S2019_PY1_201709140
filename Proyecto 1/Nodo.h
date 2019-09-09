@@ -1,8 +1,8 @@
 #ifndef NODO_H
 #define NODO_H
 
-#include "pch.h"
 #include <string>
+#include "Matriz.h"
 using namespace std;
 
 
@@ -10,20 +10,20 @@ class Nodo
 {
 private:
 	
-	string mat;
+	
 	Nodo* siguiente;
 
 public:
-	string mat;
+	Matriz mat;
 	
 
 	Nodo();
-	Nodo(string);
-	Nodo(string, Nodo*);
+	Nodo(Matriz);
+	Nodo(Matriz, Nodo*);
 
-	void setValor(string);
+	void setValor(Matriz);
 	void setSiguiente(Nodo*);
-	string getValor();
+	Matriz getValor();
 	Nodo* getSiguiente();
 	virtual ~Nodo();
 

@@ -5,7 +5,7 @@
 #include <string>
 #include <fstream>
 #include "Cubo.h"
-#include "pch.h"
+
 
 using namespace std;
 Lista::Lista() {
@@ -13,8 +13,8 @@ Lista::Lista() {
 	ultimo = NULL;
 	cantidad = 0;
 }
-void Lista::agregarElemento(Cubo cub, string nombre) {
-	NodoD* nuevo = new NodoD(cub, nombre);
+void Lista::agregarElemento(Cubo cub) {
+	NodoD* nuevo = new NodoD(cub);
 
 	if (cabeza == NULL) {
 		nuevo->setAnterior(nuevo);

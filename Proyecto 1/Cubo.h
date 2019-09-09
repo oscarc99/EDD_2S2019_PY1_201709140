@@ -2,7 +2,6 @@
 #ifndef CUBO_H
 #define CUBO_H
 
-#include "pch.h"
 #include "Nodo.h"
 #include <iostream>
 #include <string>
@@ -26,13 +25,18 @@ private:
 
 public:
 	Cubo();
+	Cubo(string nombre, int ancho, int alto, int pixA, int pixAl);
 	Nodo* ultimo;
 	string nombre;
-	string imprimirLista();
-	string getNombre();
-	void agregarElemento(string);
+	int image_widht;
+	int image_height;
+	int pixel_widht;
+	int pixel_height;
 	
-	void eliminarElemento(string);
+	string getNombre();
+	void agregarElemento(Matriz);
+	
+	
 	
 	int getCantidad();
 	virtual ~Cubo();

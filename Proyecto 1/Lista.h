@@ -2,7 +2,7 @@
 #ifndef LISTA_H
 #define LISTA_H
 
-#include "pch.h"
+
 #include "NodoD.h"
 #include <iostream>
 #include <string>
@@ -28,8 +28,8 @@ public:
 	Lista();
 	
 	string nombre;
-	string imprimirLista();
-	void agregarElemento(Cubo, string);
+	
+	void agregarElemento(Cubo);
 
 	
 

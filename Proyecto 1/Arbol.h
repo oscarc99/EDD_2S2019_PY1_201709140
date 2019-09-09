@@ -2,7 +2,7 @@
 #ifndef ARBOL_H
 #define ARBOL_H
 
-#include "pch.h"
+
 #include "Hoja.h"
 #include <iostream>
 #include <string.h>
@@ -20,8 +20,8 @@ public:
 
 	string nombre;
 	Hoja* getRaiz();
-	void agregarElemento(Hoja*, string , Cubo*, int,int ,int, int);
-	void plantar(string, Cubo*, int, int, int, int);
+	void agregarElemento(Hoja* raizActual, Cubo* cubo);
+	void plantar(Cubo* cub);
 	void setRaiz(Hoja*);
 
 

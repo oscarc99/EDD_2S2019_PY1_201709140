@@ -1,22 +1,13 @@
 #include "NodoD.h"
-#include "pch.h"
+#include "Cubo.h"
+#include <stralign.h>
 
 using namespace std;
 
-NodoD::NodoD(Cubo n, string name) {
-	cubo = n;
-	nombre = name;
-	siguiente = NULL;
-	anterior = NULL;
-}
 
-NodoD::NodoD(Cubo n, NodoD* nod, NodoD* no) {
+NodoD::NodoD(Cubo n) 
+{
 	cubo = n;
-	siguiente = nod;
-	anterior = no;
-}
-
-NodoD::NodoD() {
 	siguiente = NULL;
 	anterior = NULL;
 }

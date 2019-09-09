@@ -4,7 +4,7 @@
 #include <sstream>
 #include <string>
 #include <fstream>
-#include "pch.h"
+
 
 
 
@@ -12,36 +12,36 @@ using namespace std;
 Arbol::Arbol() {
 	raiz = NULL;
 }
-void Arbol::agregarElemento(Hoja* hoj, string name, Cubo* icubo, int iiW, int iiH, int ipW, int ipH) {
+void Arbol::agregarElemento(Hoja* hoj, Cubo* icubo){
 	
 	if (getRaiz() == 0){
-		Hoja* nuevo = new Hoja(name,  icubo, iiW, iiH, ipW,ipH);
+		Hoja* nuevo = new Hoja(icubo);
 		setRaiz(nuevo);
 
-	}else if(strcmp( name.c_str(), hoj->getNombre)>=0){
+	}else if(strcmp(hoj->getCubo->getNombre(), hoj->getCubo->getNombre())>=0){
 		//Mayor se va a la derecha
 		if (hoj->mayor == NULL) {
 			//Guarda en donde corresponde
-			hoj->setMayor(new Hoja(name, icubo, iiW, iiH, ipW, ipH));
+			hoj->setMayor(new Hoja(icubo));
 		}
 		else {
 			//Sigue recorriendo hasta encontrar null
-			agregarElemento(hoj->mayor, name, icubo, iiW, iiH, ipW, ipH);
+			agregarElemento(hoj->mayor, icubo);
 		}
 	}
 	else {
 		//Menor
 		if (hoj->menor == NULL) {
-			hoj->setMenor(new Hoja(name, icubo, iiW, iiH, ipW, ipH));
+			hoj->setMenor(new Hoja(icubo));
 		}
 		else {
-			agregarElemento(hoj->menor, name, icubo, iiW, iiH, ipW, ipH);
+			agregarElemento(hoj->menor, icubo);
 		}
 	}
 }
 
-void Arbol::plantar(string name, Cubo* icubo, int iiW, int iiH, int ipW, int ipH) {
-	agregarElemento(getRaiz(),name, icubo, iiW, iiH, ipW, ipH);
+void Arbol::plantar(Cubo* icubo) {
+	agregarElemento(getRaiz(), icubo);
 
 }
 

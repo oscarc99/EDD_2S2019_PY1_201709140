@@ -2,7 +2,7 @@
 #ifndef NODOD_H
 #define NODOD_H
 
-#include "pch.h"
+
 #include "Cubo.h"
 #include <string>
 using namespace std;
@@ -19,12 +19,10 @@ private:
 
 public:
 	Cubo cubo;
-	string nombre;
-
-
+	
 	NodoD();
-	NodoD(Cubo, string);
-	NodoD(Cubo, NodoD*,NodoD*);
+	NodoD(Cubo);
+	
 
 	void setValor(Cubo);
 	void setSiguiente(NodoD*);

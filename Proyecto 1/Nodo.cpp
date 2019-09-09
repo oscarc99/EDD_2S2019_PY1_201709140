@@ -1,14 +1,13 @@
 #include "Nodo.h"
-#include "pch.h"
 
 using namespace std;
 
-Nodo::Nodo(string n) {
+Nodo::Nodo(Matriz n) {
 	mat = n;
 	siguiente = NULL;
 }
 
-Nodo::Nodo(string n, Nodo* nod) {
+Nodo::Nodo(Matriz n, Nodo* nod) {
 	mat = n;
 	siguiente = nod;
 }
@@ -17,7 +16,7 @@ Nodo::Nodo() {
 	siguiente = NULL;
 }
 
-void Nodo::setValor(string n) {
+void Nodo::setValor(Matriz n) {
 	mat = n;
 }
 
@@ -25,7 +24,7 @@ void Nodo::setSiguiente(Nodo* n) {
 	siguiente = n;
 }
 
-string Nodo::getValor() {
+Matriz Nodo::getValor() {
 	return mat;
 }
 
