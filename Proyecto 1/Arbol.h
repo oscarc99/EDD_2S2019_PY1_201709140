@@ -17,12 +17,20 @@ class Arbol
 public:
 	Hoja* raiz;
 	Arbol();
-
+	void reporte_arbol();
 	string nombre;
 	Hoja* getRaiz();
+	string dot(Hoja* hj, string cadena);
 	void agregarElemento(Hoja* raizActual, Cubo* cubo);
 	void plantar(Cubo* cub);
 	void setRaiz(Hoja*);
+	void rep_inorder();
+	void rep_preorder();
+	void rep_postorder();
+	string inorder(Hoja*);
+	string preorder(Hoja*);
+	string postorder(Hoja*);
+
 
 
 	

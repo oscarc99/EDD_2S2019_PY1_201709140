@@ -2,7 +2,7 @@
 #ifndef NODOD_H
 #define NODOD_H
 
-
+#include <iostream>
 #include "Cubo.h"
 #include <string>
 using namespace std;

@@ -1,6 +1,8 @@
+#pragma once
 #ifndef NODO_H
 #define NODO_H
 
+#include <iostream>
 #include <string>
 #include "Matriz.h"
 using namespace std;

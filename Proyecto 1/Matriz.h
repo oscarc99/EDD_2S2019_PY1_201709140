@@ -1,5 +1,7 @@
-#include "pch.h"
-#pragma once
+ #pragma once
+#ifndef MATRIZ_H
+#define MATRIZ_H
+
 #include <string>
 using namespace std;
 class Matriz
@@ -40,3 +42,5 @@ public:
 	void guardar_pix(string color, int x, int y);
 
 };
+
+#endif
