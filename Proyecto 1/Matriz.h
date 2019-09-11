@@ -15,6 +15,7 @@ private:
 		pixel* derecha;
 		//Informacion de cada pixel siendo el color
 		string color;
+		string nombre;
 		//Ayuda para la posicion
 		int pos_x;
 		int pos_y;

@@ -18,7 +18,7 @@ private:
 
 
 public:
-	Cubo cubo;
+	Cubo *cubo;
 	
 	NodoD();
 	NodoD(Cubo);
@@ -27,7 +27,7 @@ public:
 	void setValor(Cubo);
 	void setSiguiente(NodoD*);
 	void setAnterior(NodoD*);
-	Cubo getValor();
+	string getValor();
 	NodoD* getSiguiente();
 	NodoD* getAnterior();
 	virtual ~NodoD();

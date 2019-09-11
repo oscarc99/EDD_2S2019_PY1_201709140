@@ -7,13 +7,13 @@ using namespace std;
 
 NodoD::NodoD(Cubo n) 
 {
-	cubo = n;
+	cubo = &n;
 	siguiente = NULL;
 	anterior = NULL;
 }
 
 void NodoD::setValor(Cubo n) {
-	cubo = n;
+	cubo = &n;
 }
 
 void NodoD::setSiguiente(NodoD* n) {
@@ -24,8 +24,8 @@ void NodoD::setAnterior(NodoD* n) {
 	anterior = n;
 }
 
-Cubo NodoD::getValor() {
-	return cubo;
+string NodoD::getValor() {
+	return cubo->nombre;
 }
 
 NodoD* NodoD::getSiguiente() {

@@ -14,7 +14,7 @@ using namespace std;
 class Cubo
 {
 private:
-	Nodo* cabeza;
+	
 	
 	int cantidad;
 	void setCantidad();
@@ -26,6 +26,7 @@ private:
 public:
 	Cubo();
 	Cubo(string nombre, int ancho, int alto, int pixA, int pixAl);
+	Nodo* cabeza;
 	Nodo* ultimo;
 	string nombre;
 	int image_widht;

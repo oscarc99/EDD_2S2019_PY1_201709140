@@ -36,6 +36,35 @@ void Lista::agregarElemento(Cubo cub) {
 	}
 }
 
+void Lista::reporte() {
+	ofstream archivo;
+	archivo.open("filtro.dot", ios::out);
+	archivo << "digraph G { \n";
+	archivo << "node [shape=record];rankdir=LR; \n";
+	NodoD *temp = cabeza;
+	
+	while (temp != ultimo) {
+
+		archivo << temp->getValor()+ " ->";
+		temp = temp->getSiguiente();
+	}
+	archivo << ultimo->getValor();
+	NodoD *tem = ultimo;
+	
+	while (tem != cabeza) {
+
+		archivo << tem->getValor() + " ->";
+		tem = tem->getAnterior();
+	}
+	archivo << cabeza->getValor();
+	archivo << cabeza->getValor() << "-> " << ultimo->getValor();
+	archivo << ultimo->getValor() << "-> " << cabeza->getValor();
+
+	archivo << "}";
+	system("dot -Tjpg filtro.dot -o filtro.jpg");
+	system("nohup display preorder.jpg &");
+}
+
 void Lista::setCantidad() {
 	cantidad++;
 }

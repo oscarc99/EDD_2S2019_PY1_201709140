@@ -16,8 +16,9 @@ Nodo::Nodo() {
 	siguiente = NULL;
 }
 
-void Nodo::setValor(Matriz n) {
+void Nodo::setValor(Matriz n, string name) {
 	mat = n;
+
 }
 
 void Nodo::setSiguiente(Nodo* n) {

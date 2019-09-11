@@ -33,6 +33,7 @@ void Matriz::guardar_pix(string color, int x, int y)
 	n->pos_x = x;
 	n->pos_y = y;
 	n->color = color;
+	
 	n->arriba = temp_x;
 	n->izquierda = temp_y;
 	n->abajo = NULL;

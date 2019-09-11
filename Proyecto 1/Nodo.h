@@ -17,13 +17,13 @@ private:
 
 public:
 	Matriz mat;
-	
+	string nombre;
 
 	Nodo();
 	Nodo(Matriz);
 	Nodo(Matriz, Nodo*);
 
-	void setValor(Matriz);
+	void setValor(Matriz, string);
 	void setSiguiente(Nodo*);
 	Matriz getValor();
 	Nodo* getSiguiente();

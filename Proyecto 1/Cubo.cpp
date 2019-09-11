@@ -18,7 +18,7 @@ Cubo::Cubo(string nombr, int ancho, int alto, int pixA, int pixAl) {
 	cantidad = 0;
 }
 void Cubo::agregarElemento(Matriz fed) {
-	Nodo* nuevo = new Nodo(fed, cabeza);
+	Nodo* nuevo = new Nodo(fed, NULL);
 
 	if (cabeza == NULL) {
 		
@@ -29,11 +29,11 @@ void Cubo::agregarElemento(Matriz fed) {
 	}
 	else {
 		cantidad++;
-		Nodo* aux = ultimo;
 		
 		
+		
+		ultimo ->setSiguiente( nuevo);
 		ultimo = nuevo;
-		aux->setSiguiente(ultimo);
 	}
 }
 

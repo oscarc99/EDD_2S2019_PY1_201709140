@@ -26,7 +26,7 @@ private:
 
 public:
 	Lista();
-	
+	 void reporte();
 	string nombre;
 	
 	void agregarElemento(Cubo);
