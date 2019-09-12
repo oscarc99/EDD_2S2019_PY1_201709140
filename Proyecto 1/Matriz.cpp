@@ -1,5 +1,3 @@
-#pragma once
-
 #include "Matriz.h"
 #include<iostream>
 #include<cstdlib>
@@ -127,3 +125,4 @@ void Matriz::mostrar()
 
 	}
 }
+

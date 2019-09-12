@@ -33,7 +33,4 @@ Nodo* Nodo::getSiguiente() {
 	return siguiente;
 }
 
-Nodo::~Nodo()
-{
-	//dtor
-}
+

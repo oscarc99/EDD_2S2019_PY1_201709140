@@ -1,4 +1,3 @@
-#pragma once
 #ifndef NODO_H
 #define NODO_H
 
@@ -27,7 +26,7 @@ public:
 	void setSiguiente(Nodo*);
 	Matriz getValor();
 	Nodo* getSiguiente();
-	virtual ~Nodo();
+	
 
 
 };

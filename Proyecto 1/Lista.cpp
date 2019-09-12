@@ -1,6 +1,6 @@
 #include "Lista.h"
 #include <iostream>
-#include <stdlib.h>
+
 #include <sstream>
 #include <string>
 #include <fstream>
@@ -81,3 +81,5 @@ Lista::~Lista()
 {
 	//destructor
 }
+
+

@@ -1,6 +1,6 @@
 #include "Cubo.h"
 #include <iostream>
-#include <stdlib.h>
+
 #include <sstream>
 #include <string>
 #include <fstream>
@@ -57,3 +57,4 @@ Cubo::~Cubo()
 {
 	//dtor
 }
+

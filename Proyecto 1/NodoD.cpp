@@ -1,6 +1,6 @@
 #include "NodoD.h"
 #include "Cubo.h"
-#include <stralign.h>
+
 
 using namespace std;
 
@@ -40,3 +40,4 @@ NodoD::~NodoD()
 {
 	//dtor
 }
+

@@ -1,4 +1,3 @@
-#pragma once
 #ifndef HOJA_H
 #define HOJA_H
 
@@ -30,3 +29,4 @@ public:
 };
 
 #endif // NODO_H
+

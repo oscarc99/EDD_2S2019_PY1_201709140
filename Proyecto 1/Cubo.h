@@ -1,11 +1,10 @@
-#pragma once
 #ifndef CUBO_H
 #define CUBO_H
 
 #include "Nodo.h"
 #include <iostream>
 #include <string>
-#include <stdlib.h>
+
 #include <sstream>
 #include <fstream>
 

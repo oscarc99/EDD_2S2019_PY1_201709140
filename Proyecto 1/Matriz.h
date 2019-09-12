@@ -1,9 +1,9 @@
- #pragma once
 #ifndef MATRIZ_H
 #define MATRIZ_H
 
 #include <string>
 using namespace std;
+
 class Matriz
 {
 private:

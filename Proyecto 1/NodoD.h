@@ -1,4 +1,3 @@
-#pragma once
 #ifndef NODOD_H
 #define NODOD_H
 
@@ -36,3 +35,5 @@ public:
 };
 
 #endif // NODOD_H
+
+

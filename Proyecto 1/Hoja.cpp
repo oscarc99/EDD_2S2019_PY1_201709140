@@ -30,7 +30,9 @@ Cubo* Hoja::getCubo() {
 	return cubs;
 }
 
-Nodo::~Nodo()
+Hoja::~Hoja()
 {
 	//dtor
 }
+
+

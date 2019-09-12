@@ -1,13 +1,11 @@
 #include "Arbol.h"
 #include <iostream>
-#include <stdlib.h>
+
 #include <sstream>
 #include <string>
 #include <fstream>
+#include "Hoja.h"
  
-
-
-
 
 using namespace std;
 Arbol::Arbol() {
@@ -19,7 +17,7 @@ void Arbol::agregarElemento(Hoja* hoj, Cubo* icubo){
 		Hoja* nuevo = new Hoja(icubo);
 		setRaiz(nuevo);
 
-	}else if(strcmp(hoj->getCubo->getNombre(), hoj->getCubo->getNombre())>=0){
+	}else if(strcmp(hoj->getCubo()->getNombre().c_str(), hoj->getCubo()->getNombre().c_str())>=0){
 		//Mayor se va a la derecha
 		if (hoj->mayor == NULL) {
 			//Guarda en donde corresponde
@@ -52,13 +50,13 @@ void Arbol::reporte_arbol() {
 		//Escribir en el documento
 		archivo << "digraph G {" << '\n';
 		archivo << "    nodesep=0.8;ranksep=0.5;" << '\n';
-		archivo << "{node[style = invis, label = \"\"]; cx_"<<raiz->getCubo->getNombre()<<"; }" << '\n';
-		archivo << "     {edge[style=invis];"<< raiz->getCubo->getNombre() <<" -> cx_"<< raiz->getCubo->getNombre() <<"; "<< raiz->menor->getCubo->getNombre() <<" -> cx_"<< getRaiz()->getCubo->getNombre() <<" -> "<< raiz->mayor->getCubo->getNombre() <<";}";
+		archivo << "{node[style = invis, label = \"\"]; cx_"<<raiz->getCubo()->getNombre()<<"; }" << '\n';
+		archivo << "     {edge[style=invis];"<< raiz->getCubo()->getNombre() <<" -> cx_"<< raiz->getCubo()->getNombre() <<"; "<< raiz->menor->getCubo()->getNombre() <<" -> cx_"<< getRaiz()->getCubo()->getNombre() <<" -> "<< raiz->mayor->getCubo()->getNombre() <<";}";
 		archivo << "{rank = same; ";
-		archivo << raiz->menor->getCubo->getNombre()<<"; ";
-		archivo << raiz->mayor->getCubo->getNombre() << "; ";
-		archivo << " cx_"<<raiz->getCubo->getNombre() << "; "<< '\n';
-		archivo << dot(raiz, "");
+		archivo << raiz->menor->getCubo()->getNombre()<<"; ";
+		archivo << raiz->mayor->getCubo()->getNombre() << "; ";
+		archivo << " cx_"<<raiz->getCubo()->getNombre() << "; "<< '\n';
+		archivo << dot(raiz);
 		archivo << '\n';
 		archivo << "}";
 		archivo.close();
@@ -81,17 +79,13 @@ void Arbol::setRaiz(Hoja* root) {
 	raiz = root;
 }
 
-string Arbol::dot(Hoja* hj, string cadena) {
-	string cad;
+string Arbol::dot(Hoja* hj) {
+	
 	if (hj == 0) {
-		return cadena;
+		return "";
 	}
 	else {
-		cad = cadena <<hj->getCubo()->getNombre<<"->"<< hj->menor->getCubo()->getNombre<<";"<<'\n';
-		cad = cad + dot(hj->menor->getCubo()->getNombre, cad);
-		
-		cad = cad + cadena << hj->getCubo()->getNombre << "->" << hj->menor->getCubo()->getNombre << ";" << '\n';
-		dot(hj->menor->getCubo()->getNombre, cad);
+		return hj->getCubo()->getNombre() + "->" + hj->menor->getCubo()->getNombre() +"; \n" + dot(hj->menor) +  hj->getCubo()->getNombre() + "->" + hj->menor->getCubo()->getNombre() + "; \n " + dot(hj->mayor);
 		
 		
 		
@@ -163,3 +157,4 @@ Arbol::~Arbol()
 {
 	//destructor
 }
+
