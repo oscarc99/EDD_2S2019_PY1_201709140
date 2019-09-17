@@ -8,27 +8,28 @@
 
 
 using namespace std;
+
 Lista::Lista() {
 	cabeza = NULL;
 	ultimo = NULL;
 	cantidad = 0;
 }
-void Lista::agregarElemento(Cubo cub) {
-	NodoD* nuevo = new NodoD(cub);
 
+void Lista::agregarElement(Cubo cubs) {
+	nododptr nuevo = new nodod;
+	nuevo->cubo = cubs;
 	if (cabeza == NULL) {
-		nuevo->setAnterior(nuevo);
-		nuevo->setSiguiente(nuevo);
+		nuevo->anterior=nuevo;
+		nuevo->siguiente=nuevo;
 		cabeza = nuevo;
-		ultimo = cabeza;
-		setCantidad();
-
+		ultimo = nuevo;
+		cantidad++;
 	}
 	else {
 		cantidad++;
 		
-		nuevo->setAnterior(ultimo);
-		nuevo->setSiguiente(cabeza);
+		nuevo->anterior=ultimo;
+		nuevo->siguiente=cabeza;
 
 
 		ultimo = nuevo;
@@ -41,41 +42,40 @@ void Lista::reporte() {
 	archivo.open("filtro.dot", ios::out);
 	archivo << "digraph G { \n";
 	archivo << "node [shape=record];rankdir=LR; \n";
-	NodoD *temp = cabeza;
-	
+	nododptr temp = new nodod;
+	temp=cabeza;
 	while (temp != ultimo) {
 
-		archivo << temp->getValor()+ " ->";
-		temp = temp->getSiguiente();
+		archivo << temp->cubo.nombre + " ->";
+		temp = temp->siguiente;
 	}
-	archivo << ultimo->getValor();
-	NodoD *tem = ultimo;
-	
+	archivo << ultimo->cubo.nombre;
+	nododptr tem = new nodod;
+	tem=ultimo;
 	while (tem != cabeza) {
 
-		archivo << tem->getValor() + " ->";
-		tem = tem->getAnterior();
+		archivo << temp->cubo.nombre+ " ->";
+		tem = tem->anterior;
 	}
-	archivo << cabeza->getValor();
-	archivo << cabeza->getValor() << "-> " << ultimo->getValor();
-	archivo << ultimo->getValor() << "-> " << cabeza->getValor();
+	archivo << cabeza->cubo.nombre;
+	archivo << cabeza->cubo.nombre << "-> " << ultimo->cubo.nombre;
+	archivo << ultimo->cubo.nombre << "-> " << cabeza->cubo.nombre;
 
 	archivo << "}";
 	system("dot -Tjpg filtro.dot -o filtro.jpg");
 	system("nohup display preorder.jpg &");
 }
 
-void Lista::setCantidad() {
-	cantidad++;
-}
 
 int Lista::getCantidad() {
 	return cantidad;
 }
 
-void Lista::setCantidadM() {
-	cantidad--;
-}
+void Lista::Limpiar(){
+	cabeza = NULL;
+	ultimo = NULL;
+	cantidad = 0;
+} 
 
 Lista::~Lista()
 {

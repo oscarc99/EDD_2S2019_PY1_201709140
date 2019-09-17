@@ -1,19 +1,23 @@
 #include "NodoD.h"
 #include "Cubo.h"
-
+#include <string>
 
 using namespace std;
 
+NodoD::NodoD(){
+	siguiente = NULL;
+	anterior = NULL;	
+}
 
 NodoD::NodoD(Cubo n) 
 {
-	cubo = &n;
+	cub = n;
 	siguiente = NULL;
 	anterior = NULL;
 }
 
 void NodoD::setValor(Cubo n) {
-	cubo = &n;
+	cub = n;
 }
 
 void NodoD::setSiguiente(NodoD* n) {
@@ -24,8 +28,8 @@ void NodoD::setAnterior(NodoD* n) {
 	anterior = n;
 }
 
-string NodoD::getValor() {
-	return cubo->nombre;
+Cubo NodoD::getValor() {
+	return cub;
 }
 
 NodoD* NodoD::getSiguiente() {

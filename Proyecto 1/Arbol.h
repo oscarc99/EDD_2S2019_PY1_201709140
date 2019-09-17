@@ -14,7 +14,9 @@ using namespace std;
 class Arbol
 {
 	public:
+		string name_image[15];
 		Hoja* raiz;
+		int tamano;
 		Arbol();
 		void reporte_arbol();
 		string nombre;
@@ -29,6 +31,7 @@ class Arbol
 		string inorder(Hoja*);
 		string preorder(Hoja*);
 		string postorder(Hoja*);
+		Cubo* buscar(string, Hoja*);
 
 
 

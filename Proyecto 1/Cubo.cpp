@@ -17,36 +17,42 @@ Cubo::Cubo(string nombr, int ancho, int alto, int pixA, int pixAl) {
 	ultimo = NULL;
 	cantidad = 0;
 }
+
+Cubo::Cubo(){
+	cabeza = NULL;
+	ultimo = NULL;
+	cantidad = 0;	
+}
+
+void Cubo::configurar(string nombr, int ancho, int alto, int pixA, int pixAl) {
+	nombre = nombr;
+	image_widht = ancho;
+	image_height = alto;
+	pixel_widht = pixA;
+	pixel_widht = pixAl;
+
+}
+
 void Cubo::agregarElemento(Matriz fed) {
-	Nodo* nuevo = new Nodo(fed, NULL);
-
+	nodoptr n = new nodo;
+	n->siguiente = NULL;
+	n->data = fed;
 	if (cabeza == NULL) {
-		
-		cabeza = nuevo;
-		ultimo = cabeza;
-		setCantidad();
-		
-	}
-	else {
+		cabeza = n;
+		ultimo = n;
 		cantidad++;
-		
-		
-		
-		ultimo ->setSiguiente( nuevo);
-		ultimo = nuevo;
+	}
+	else
+	{
+		ultimo->siguiente = n;
+		ultimo = n;
+		cantidad++;
 	}
 }
 
-void Cubo::setCantidad() {
-	cantidad++;
-}
 
 int Cubo::getCantidad() {
 	return cantidad;
-}
-
-void Cubo::setCantidadM() {
-	cantidad--;
 }
 
 string Cubo::getNombre() {

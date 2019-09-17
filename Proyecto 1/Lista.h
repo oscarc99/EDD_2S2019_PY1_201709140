@@ -1,11 +1,9 @@
 #ifndef LISTA_H
 #define LISTA_H
 
-
-#include "NodoD.h"
+#include "Cubo.h"
 #include <iostream>
 #include <string>
-
 #include <sstream>
 #include <fstream>
 
@@ -13,22 +11,37 @@ using namespace std;
 
 class Lista
 {
+	private:
+	typedef struct nodod {
+		Cubo cubo;
+		int alto;
+		int ancho;
+		int pixelx;
+		int pixely;
+		nodod* siguiente;
+		nodod* anterior;
+	}*nododptr;
+
+	nododptr cabeza;
+	nododptr ultimo;
+	
+	
 public:
-	NodoD* cabeza;
-	NodoD* ultimo;
+	Lista();
+	
 	int cantidad;
 	void setCantidad();
 	
 
 	void setCantidadM();
 
+	void Limpiar();
 
-
-	Lista();
-	 void reporte();
+	
+	void reporte();
 	string nombre;
 	
-	void agregarElemento(Cubo);
+	void agregarElement(Cubo);
 
 	
 

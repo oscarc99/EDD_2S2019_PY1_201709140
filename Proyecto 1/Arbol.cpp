@@ -10,28 +10,37 @@
 using namespace std;
 Arbol::Arbol() {
 	raiz = NULL;
+	tamano=0;
 }
 void Arbol::agregarElemento(Hoja* hoj, Cubo* icubo){
 	
 	if (raiz == NULL){
 		Hoja* nuevo = new Hoja(icubo);
 		setRaiz(nuevo);
+		name_image[tamano] = icubo->getNombre();
+		tamano++;
 
 	}else if(strcmp(hoj->getCubo()->getNombre().c_str(), hoj->getCubo()->getNombre().c_str())>=0){
 		//Mayor se va a la derecha
 		if (hoj->mayor == NULL) {
 			//Guarda en donde corresponde
 			hoj->setMayor(new Hoja(icubo));
+			name_image[tamano] = icubo->getNombre();
+			tamano++;
+			
 		}
 		else {
 			//Sigue recorriendo hasta encontrar null
 			agregarElemento(hoj->mayor, icubo);
+			
 		}
 	}
 	else {
 		//Menor
 		if (hoj->menor == NULL) {
 			hoj->setMenor(new Hoja(icubo));
+			name_image[tamano] = icubo->getNombre();
+			tamano++;
 		}
 		else {
 			agregarElemento(hoj->menor, icubo);
@@ -99,6 +108,7 @@ void Arbol::rep_inorder(){
 	archivo << "digraph G { \n";
 	archivo << "node [shape=record];rankdir=LR; \n";
 	archivo<<inorder(raiz);
+	
 	archivo << "}";
 	system("dot -Tjpg inorder.dot -o inorder.jpg");
 	system("nohup display inorder.jpg &");
@@ -137,6 +147,20 @@ string Arbol::inorder(Hoja* hoj) {
 	}
 
 }
+
+Cubo* Arbol::buscar(string name, Hoja* actual){
+	if(actual!=0){
+	
+		if (actual->getCubo()->getNombre() == name){
+			return actual->getCubo();
+		}else{
+			buscar(name, actual->menor);
+			buscar(name,actual->mayor);
+		}
+	}	
+}
+
+
 
 string Arbol::preorder(Hoja* hoj) {
 	if (hoj != 0) {

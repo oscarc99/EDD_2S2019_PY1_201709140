@@ -17,16 +17,16 @@ private:
 
 
 public:
-	Cubo *cubo;
+	Cubo cub;
 	
 	NodoD();
 	NodoD(Cubo);
 	
-
+	Cubo getValor();
 	void setValor(Cubo);
 	void setSiguiente(NodoD*);
 	void setAnterior(NodoD*);
-	string getValor();
+	
 	NodoD* getSiguiente();
 	NodoD* getAnterior();
 	virtual ~NodoD();

@@ -1,32 +1,37 @@
 #ifndef CUBO_H
 #define CUBO_H
 
-#include "Nodo.h"
 #include <iostream>
 #include <string>
-
 #include <sstream>
 #include <fstream>
+#include "Matriz.h"
 
 using namespace std;
 
 class Cubo
 {
 private:
-	
+	typedef struct nodo {
+		Matriz data;
+		nodo* siguiente;
+	}*nodoptr;
+
+
 	
 	int cantidad;
-	void setCantidad();
-	int contadorsito;
 	
-	void setCantidadM();
+	
+	
 	
 
 public:
+	nodoptr cabeza;
+	nodoptr ultimo;
+	nodoptr temporal;
 	Cubo();
 	Cubo(string nombre, int ancho, int alto, int pixA, int pixAl);
-	Nodo* cabeza;
-	Nodo* ultimo;
+	void configurar(string nombre, int ancho, int alto, int pixA, int pixAl);
 	string nombre;
 	int image_widht;
 	int image_height;
